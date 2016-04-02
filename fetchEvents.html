@@ -1,0 +1,27 @@
+<div class="news-story">
+ <h5></h5>
+ <p></p>
+ <h5></h5>
+ <p></p>
+</div>
+
+<script>
+    data = {
+        "events": [
+            {
+            "title": "Improv Comedy Show",
+            "author": "Off Center"},
+        {
+            "title": "Hackathon",
+            "author": "SWICS, SHPE"}
+        ]
+    };
+
+data.events.forEach(function(v, i) {
+    var newElement = document.createElement('div');
+    newElement.id = v.title; 
+    newElement.className = "event";
+    newElement.innerHTML = v.author + ": " + v.title;
+    document.body.appendChild(newElement);
+});
+</script>

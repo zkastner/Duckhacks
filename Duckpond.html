@@ -19,15 +19,36 @@ Hayden Lounge<br></p>
 <img src="Dude.jpg" alt="poster" height"42" width="42"></p>
 
 <script>
-var events = 'Off Center,SWICS,SHPE'.split(',');
-var events_info = ': Improv Comedy Show, Hackathon, Hackathon'.split(',');
-for (var c in events) {
+var events = 'off_center,SWICS,SHPE'.split(',');
+var events_info = 'Improv Comedy Show <br> Saturday, Hackathon, Hackathon'.split(',');
+
+var off_center = {
+'date':'4/2',
+'day':'Saturday',
+'location':'Hayden'
+};
+
+var SWICS = {
+'date':'4/2',
+'day':'Saturday',
+'location':'E 222'
+};
+
+var events_maps = off_center, SWICS;
+
+// var checkValue = function(value){
+//   return hash[value] === true;
+// };
+
+for (var c in events_maps) {
     var newElement = document.createElement('div');
-    newElement.id = events[c]; 
+    newElement.id = events_maps[c](events[c]); 
     newElement.className = "event";
-    newElement.innerHTML = events[c] + events_info[c];
+    newElement.innerHTML = events_map[c](events[c]); // + ": " + events_info[c] + "<br><br>";
     document.body.appendChild(newElement);
 }
+
+
 </script>
 </body>
 </html>

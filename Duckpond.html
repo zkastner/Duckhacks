@@ -20,10 +20,12 @@ Hayden Lounge<br></p>
 
 <script>
 var events = 'Off Center,SWICS,SHPE'.split(',');
-for (var c in cars) {
+var events_info = ': Improv Comedy Show, Hackathon, Hackathon'.split(',');
+for (var c in events) {
     var newElement = document.createElement('div');
-    newElement.id = events[c]; newElement.className = "event";
-    newElement.innerHTML = events[c];
+    newElement.id = events[c]; 
+    newElement.className = "event";
+    newElement.innerHTML = events[c] + events_info[c];
     document.body.appendChild(newElement);
 }
 </script>

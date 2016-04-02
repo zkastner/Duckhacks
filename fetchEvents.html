@@ -1,40 +1,74 @@
-<script>
-    data = {
-      "events": [
-        {
-          "title": "Improv Comedy Show",
-          "author": "Off Center",
-          "categories": [
-            "performing_arts",
-            "free_food",
-            "off_center"
-          ]
-        },
-        {
-          "title": "Hackathon",
-          "author": "SWICS, SHPE",
-          "categories": [
-            "computer_science",
-            "free_food",
-            "swics",
-            "shpe",
-          ]
-        }
-      ]
-    };
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+</head>
+<body>
 
-    data.events.forEach(function(v, i) {
-        var newElement = document.createElement('div');
-        var className = "";
-        
-        newElement.id = v.title;
-        //the class name is from the categories property of the JSON, separated by spaces
-        data.events[i].categories.forEach(function(v, i) {
-            className += v + " ";
+<script>
+    $( document ).ready(function() {
+        data = {
+          "events": [
+            {
+              "title": "Improv Comedy Show",
+              "author": "Off Center",
+              "categories": [
+                "performing_arts",
+                "free_food",
+                "off_center"
+              ]
+            },
+            {
+              "title": "Hackathon",
+              "author": "SWICS, SHPE",
+              "categories": [
+                "computer_science",
+                "free_food",
+              ]
+            }
+          ]
+        };
+
+        var categories = new Set();
+        data.events.forEach(function(v, i) {
+            var newElement = document.createElement('div');
+            var className = "";
+            
+            newElement.id = v.title;
+            //the class name is from the categories property of the JSON, separated by spaces
+            data.events[i].categories.forEach(function(v, i) {
+                categories.add(v);
+                className += v + " ";
+            });
+
+
+
+
+            newElement.className = className;
+            newElement.innerHTML = v.author + ": " + v.title + "<br> CATEGORIES: " + v.categories + "<br><br><br>";
+            $("#events").append(newElement);
         });
 
-        newElement.className = className;
-        newElement.innerHTML = v.author + ": " + v.title + "<br> CATEGORIES: " + v.categories + "<br><br><br>";
-        document.body.appendChild(newElement);
+        categories.forEach(function(value) {
+            $("#checkboxes").append('<input type="checkbox" checked=true name="vehicle" value="'+value+'">'+value+'<br>');
+        });
+        $(':checkbox').change(function(){
+                $("#events").children().hide();
+                $( ":checkbox" ).each(function( index ) {
+                    if (this.checked) {
+                        $("."+this.value).show();
+                    }
+                });
+
+        });
     });
 </script>
+<div id="events"></div>
+<div id="checkboxes"></div>
+<div class="news-story">
+ <h5></h5>
+ <p></p>
+ <h5></h5>
+ <p></p>
+</div>
+</body>
+</html>

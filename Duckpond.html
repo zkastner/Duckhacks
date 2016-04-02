@@ -17,5 +17,14 @@ p {text-align:center;font-family:Times;font-size:16px;font-style:normal;font-wei
 Saturday 4/2<br>
 8 PM<br>
 Hayden Lounge<br></p>
+<script>
+var cars = 'Off Center,SWICS,SHPE'.split(',');
+for (var c in cars) {
+    var newElement = document.createElement('div');
+    newElement.id = cars[c]; newElement.className = "car";
+    newElement.innerHTML = cars[c];
+    document.body.appendChild(newElement);
+}
+</script>
 </body>
 </html>

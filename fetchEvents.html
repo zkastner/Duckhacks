@@ -27,14 +27,18 @@
       ]
     };
 
-data.events.forEach(function(v, i) {
-    var newElement = document.createElement('div');
-    newElement.id = v.title;
-    data.events.categories.forEach(function(v, i) {
+    data.events.forEach(function(v, i) {
+        var newElement = document.createElement('div');
+        var className = "";
         
-    }
-    newElement.className = "event";
-    newElement.innerHTML = v.author + ": " + v.title + "<br> CATEGORIES: " + v.categories + "<br><br>";
-    document.body.appendChild(newElement);
-});
+        newElement.id = v.title;
+        //the class name is from the categories property of the JSON, separated by spaces
+        data.events[i].categories.forEach(function(v, i) {
+            className += v + " ";
+        });
+
+        newElement.className = className;
+        newElement.innerHTML = v.author + ": " + v.title + "<br> CATEGORIES: " + v.categories + "<br><br><br>";
+        document.body.appendChild(newElement);
+    });
 </script>

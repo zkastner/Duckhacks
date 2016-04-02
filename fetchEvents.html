@@ -7,21 +7,31 @@
 
 <script>
     data = {
-        "events": [
-            {
-            "title": "Improv Comedy Show",
-            "author": "Off Center"},
+      "events": [
         {
-            "title": "Hackathon",
-            "author": "SWICS, SHPE"}
-        ]
+          "title": "Improv Comedy Show",
+          "author": "Off Center",
+          "categories": [
+            "performing_arts",
+            "free_food"
+          ]
+        },
+        {
+          "title": "Hackathon",
+          "author": "SWICS, SHPE",
+          "categories": [
+            "computer_science",
+            "free_food"
+          ]
+        }
+      ]
     };
 
 data.events.forEach(function(v, i) {
     var newElement = document.createElement('div');
-    newElement.id = v.title; 
+    newElement.id = v.title;
     newElement.className = "event";
-    newElement.innerHTML = v.author + ": " + v.title;
+    newElement.innerHTML = v.author + ": " + v.title + "<br> CATEGORIES: " + v.categories + "<br><br>";
     document.body.appendChild(newElement);
 });
 </script>

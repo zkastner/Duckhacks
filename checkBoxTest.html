@@ -1,0 +1,34 @@
+
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+</head>
+<body>
+    <script>
+        var categories = Array();
+        $( document ).ready(function() {
+            var options = ["1", "2", "3"];
+            for (var i = 0; i < options.length ; i++) {
+                var category = options[i];
+                if (!(category in categories)) {
+                    categories[category] = [];
+                }
+                categories[category].push(i);
+                $("body").append("<p>stuff</p>");
+                $("#checkboxes").append('<input type="checkbox" checked=true name="vehicle" value="'+options[i]+'">'+options[i]+'<br>');
+                $("#events").append('<p>event'+i+'</p>');
+            }
+            var events = $("#events").children();
+            alert(events[1].text);
+        });
+        function hideEvents() {
+            var events = $("#events").children();
+            $('checkboxes').children().each(function () {
+            });
+        }
+    </script>
+    <div id="checkboxes"></div>
+    <div id="events"></div>
+    <p></p>
+</body>
+</html>

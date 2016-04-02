@@ -50,7 +50,8 @@ h1{font-family:Georgia;
                 "performing_arts",
                 "free_food",
                 "off_center"
-              ]
+              ],
+              "image": "Dude.jpg"
             },
             {
               "title": "Hackathon",
@@ -58,7 +59,19 @@ h1{font-family:Georgia;
               "categories": [
                 "computer_science",
                 "free_food",
-              ]
+                "swics",
+                "shpe"
+              ],
+              "image": "duckhacks.jpg"
+            },
+            {
+              "title": "Design Circuit Boards",
+              "author": "IEEE",
+              "categories": [
+                "electrical_engineering",
+                "ieee"
+              ],
+              "image": "ieee.png"
             }
           ]
         };
@@ -75,12 +88,17 @@ h1{font-family:Georgia;
                 className += v + " ";
             });
 
-
-
-
             newElement.className = className;
-            newElement.innerHTML = v.author + ": " + v.title + "<br> CATEGORIES: " + v.categories + "<br><br><br>";
+            newElement.innerHTML = v.author + ": <a href=#>" + v.title + "</a><br> CATEGORIES: " + v.categories + "<br> <p><img src=" + v.image  + " width=350></p> <br><br><br>";
+
             $("#events").append(newElement);
+        });
+
+        //$("p").toggle(); //close images
+
+        //if click on event description, toggle event pic
+        $("a").click( function() { 
+            $(this).parent().children("p").toggle();
         });
 
         categories.forEach(function(value) {

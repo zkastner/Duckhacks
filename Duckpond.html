@@ -19,11 +19,11 @@ Hayden Lounge<br></p>
 <img src="Dude.jpg" alt="poster" height"42" width="42"></p>
 
 <script>
-var cars = 'Off Center,SWICS,SHPE'.split(',');
+var events = 'Off Center,SWICS,SHPE'.split(',');
 for (var c in cars) {
     var newElement = document.createElement('div');
-    newElement.id = cars[c]; newElement.className = "car";
-    newElement.innerHTML = cars[c];
+    newElement.id = events[c]; newElement.className = "event";
+    newElement.innerHTML = events[c];
     document.body.appendChild(newElement);
 }
 </script>

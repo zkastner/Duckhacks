@@ -10,10 +10,11 @@
           "events": [
             {
               "title": "Improv Comedy Show",
-              "author": "Off Centre",
+              "author": "Off Center",
               "categories": [
                 "performing_arts",
-                "free_food"
+                "free_food",
+                "off_center"
               ]
             },
             {
@@ -21,7 +22,7 @@
               "author": "SWICS, SHPE",
               "categories": [
                 "computer_science",
-                "free_food"
+                "free_food",
               ]
             }
           ]
@@ -39,13 +40,30 @@
                 className += v + " ";
             });
 
+
+
+
             newElement.className = className;
             newElement.innerHTML = v.author + ": " + v.title + "<br> CATEGORIES: " + v.categories + "<br><br><br>";
             $("#events").append(newElement);
         });
+
+        categories.forEach(function(value) {
+            $("#checkboxes").append('<input type="checkbox" checked=true name="vehicle" value="'+value+'">'+value+'<br>');
+        });
+        $(':checkbox').change(function(){
+                $("#events").children().hide();
+                $( ":checkbox" ).each(function( index ) {
+                    if (this.checked) {
+                        $("."+this.value).show();
+                    }
+                });
+
+        });
     });
 </script>
 <div id="events"></div>
+<div id="checkboxes"></div>
 <div class="news-story">
  <h5></h5>
  <p></p>

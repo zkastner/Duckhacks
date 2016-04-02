@@ -30,6 +30,9 @@
 data.events.forEach(function(v, i) {
     var newElement = document.createElement('div');
     newElement.id = v.title;
+    data.events.categories.forEach(function(v, i) {
+        
+    }
     newElement.className = "event";
     newElement.innerHTML = v.author + ": " + v.title + "<br> CATEGORIES: " + v.categories + "<br><br>";
     document.body.appendChild(newElement);

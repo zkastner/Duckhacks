@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style type="text/css">
+body {background-color:ffffff;background-repeat:no-repeat;background-position:top left;background-attachment:fixed;}
+h1{text-align:center;font-family:Georgia;color:#CC0000;background-color:#8C8C8C;}
+p {text-align:center;font-family:Times;font-size:16px;font-style:normal;font-weight:bold;font-variant:small-caps;color:000000;background-color:#FFFFFF;}
+</style>
+</head>
+<body>
+<h1>DUCK POND</h1>
+<p>Off Center: Improv Comedy Show<br>
+Saturday 4/2<br>
+8 PM<br>
+Hayden Lounge<br></p>
+<img src="Dude.jpg" alt="poster" height"42" width="42"></p>
+
+<script>
+var events = 'Off Center,SWICS,SHPE'.split(',');
+var events_info = ': Improv Comedy Show, Hackathon, Hackathon'.split(',');
+for (var c in events) {
+    var newElement = document.createElement('div');
+    newElement.id = events[c]; 
+    newElement.className = "event";
+    newElement.innerHTML = events[c] + events_info[c];
+    document.body.appendChild(newElement);
+}
+</script>
+</body>
+</html>

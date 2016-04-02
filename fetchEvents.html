@@ -3,6 +3,11 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 </head>
 <style type="text/css">
+#duck {
+  position: absolute;
+  top:45px;
+  left:5px;
+}
 #checkboxes {text-align:left;
   position: absolute;
   top:45px;
@@ -116,7 +121,7 @@ h1{font-family:Georgia;
         });
         $( "#duck" ).animate({
             opacity: 0.25,
-            right: "+=500px",
+            left: "+=100",
             height: "toggle"
             }, 5000, function() {
 });
